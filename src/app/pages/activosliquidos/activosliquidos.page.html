@@ -1,41 +1,117 @@
 <app-header titulo="Activos Líquidos"></app-header>
 
-<ion-content>
-    <ion-grid>
+<ion-content >
+    <ion-grid style="background-color: #fbfffa" >
         <ion-row>
             <ion-col size="2"></ion-col>
             <ion-col size="8">
 
+                <ion-item >
+                    <ion-label style="font-family: AvenirLTStd-Black ;"  >Fecha</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY"></ion-datetime>
+                </ion-item>      
+                
+                    <ion-img style="width: 20%; position: relative; left: 40%;" src="/assets/logo-cab-capital-1.svg" ></ion-img>
 
 
-
-                <ion-card-title style="font-family: AvenirLTStd-Black; position: relative; left: 30px; top: 7px; ">
-                    Inversiones</ion-card-title> <!-- acá tengo que arreglar esto-->
                 <ion-card *ngFor="let item of datosi2; let i = index;">
+                    
+                    <ion-card-title style="font-family: AvenirLTStd-Black; position: relative; left: 36px; top: 7px; font-weight: bold; color: #34662E; " > 
+                        {{ item.title }}
+                    </ion-card-title>
+                    <ion-card-subtitle style="position: relative; left: 38px; top: 7px; font-size: 9px;" >Simple information <br> required for calculation</ion-card-subtitle>
                     <ion-card-content>
 
                         <ion-label style="font-family: AvenirLTStd-Black; ">
                             {{ item.description }}
                             <br>
+                            
                             <form #formulario="ngForm" (ngSubmit)="onSubmit()">
                                 <ion-item>
                                     <ion-input type="number" placeholder="Awesome Input" name="number"
-                                        [(ngModel)]="arrayInput1[i]" required></ion-input>
-                                    <ion-label>{{ formulario.valid }} </ion-label>
+                                        [(ngModel)]="arrayInput1[i]"  required></ion-input>
+                                    
                                 </ion-item>
+
                                 <ion-label>
-                                    {{ item.content }} | {{ formulario.valid }}
+                                    {{ item.content }} 
                                 </ion-label>
+                                
                                 <ion-input type="number" placeholder="Awesome Input" name="number1"
                                     [(ngModel)]="arrayInput2[i]" required></ion-input>
                                 <ion-label>
-                                    {{ item.content1 }} | {{ formulario.valid }}
+                                    {{ item.content1 }} 
                                 </ion-label>
-                                <ion-input type="number" placeholder="Awesome Input" name="number2"
-                                    [(ngModel)]="arrayInput3[i]" required></ion-input>
 
-                                <ion-button type="submit" expand="block">
-                                    Click me
+
+                                <ion-input type="number" placeholder="Awesome Input" name="number2"
+                                [(ngModel)]="arrayInput3[i]"   required></ion-input>
+                                
+                                <!--acá colocar el ngif-->
+
+
+
+        
+
+
+                                <ion-label>
+                                    {{ item.content3 }} 
+                                </ion-label>
+                                <ion-input type="number" placeholder="Awesome Input" name="number4"
+                                [(ngModel)]="arrayInput5[i]" *ngIf="i == 2"  required ></ion-input>
+
+                                
+                                <ion-label>
+                                    {{ item.content4 }} 
+                                </ion-label>
+                                <ion-input type="number" placeholder="Awesome Input" name="number5"
+                                [(ngModel)]="arrayInput6[i]" *ngIf="i == 2" required></ion-input>
+
+                                
+                                <ion-label>
+                                    {{ item.content5 }} 
+                                </ion-label>
+                                <ion-input type="number" placeholder="Awesome Input" name="number6"
+                                [(ngModel)]="arrayInput7[i]" *ngIf="i == 2" required></ion-input>
+
+                                <ion-label>
+                                    {{ item.content6 }} 
+                                </ion-label>
+                                <ion-input type="number" placeholder="Awesome Input" name="number7"
+                                [(ngModel)]="arrayInput8[i]" *ngIf="i == 2" required></ion-input>
+
+                                <ion-label>
+                                    {{ item.content7 }} 
+                                </ion-label>
+                                <ion-input type="number" placeholder="Awesome Input" name="number8"
+                                [(ngModel)]="arrayInput9[i]" *ngIf="i == 2" required></ion-input>
+
+                                <ion-label>
+                                    {{ item.content8 }} 
+                                </ion-label>
+                                <ion-input type="number" placeholder="Awesome Input" name="number9"
+                                [(ngModel)]="arrayInput10[i]" *ngIf="i == 2" required></ion-input>
+
+                                <ion-label>
+                                    {{ item.content9 }} 
+                                </ion-label>
+                                <ion-input type="number" placeholder="Awesome Input" name="number10"
+                                [(ngModel)]="arrayInput11[i]" *ngIf="i == 2" required></ion-input>
+
+
+                                <ion-label>
+                                    {{ item.content10 }} 
+                                </ion-label>
+                                <ion-input type="number" placeholder="Awesome Input" name="number11"
+                                [(ngModel)]="arrayInput12[i]" *ngIf="i == 2" required></ion-input>
+                                
+
+
+
+
+                                <ion-button [disabled]="formulario.invalid"
+                                            type="submit" expand="block">
+                                    Guardar
                                 </ion-button>
                             </form>
                         </ion-label>

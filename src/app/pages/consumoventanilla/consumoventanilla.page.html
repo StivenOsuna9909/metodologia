@@ -1,0 +1,110 @@
+<app-header titulo="Consumo Ventanilla"></app-header>
+
+<ion-content>
+    <ion-grid style="background-color: #fbfffa">
+        <ion-row>
+            <ion-col size="2"></ion-col>
+            <ion-col size="8">
+                <ion-list>
+                    <ion-label style="font-weight: bold; font-family: AvenirLTStd-Black;" >Fuente de información: Reporte individual de cartera - Formato 19 (Solo asociados calificados en A)</ion-label>
+                </ion-list>
+                <br>
+                <form #formulario2="ngForm">
+                    <ion-list-header>
+                        <ion-label>Formulario válido: {{ formulario2.valid }}</ion-label>
+                    </ion-list-header>
+                    <ion-label style="font-family: AvenirLTStd-Black;" >Nro. Crédito</ion-label>
+                    
+                    <ion-item>
+                        <ion-input type="number" placeholder="Awesome Input" required name="nrocredito1" [(ngModel)]="nroCredito1" ></ion-input>
+                    </ion-item>
+                    <br>
+
+                    <ion-item>
+                      <ion-label style="font-family: AvenirLTStd-Black;" >Fecha de desembolso</ion-label>
+                      <ion-datetime display-format="DD.MM.YYYY"></ion-datetime>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label style="font-family: AvenirLTStd-Black;" >Fecha de vencimiento</ion-label>
+                      <ion-datetime display-format="DD.MM.YYYY"></ion-datetime>
+                    </ion-item>
+                    
+                    <ion-label style="font-family: AvenirLTStd-Black;" >Altura cuota</ion-label>
+
+                    <ion-item>
+                        <ion-input type="number" placeholder="Awesome Input" required name="alturaCuota" [(ngModel)]="alturaCuota" id="alturaCuota" ></ion-input>
+                    </ion-item>
+                    <br>
+                    <ion-label style="font-family: AvenirLTStd-Black;" >Amortizacion</ion-label>
+
+                    <ion-item>
+                        <ion-input type="number" placeholder="Awesome Input" required name="amortizacion" [(ngModel)]="amortizacion" ></ion-input>
+                    </ion-item>
+
+
+                    <ion-label style="font-family: AvenirLTStd-Black;" >Tasa interes efectiva</ion-label>
+
+                    <ion-item>
+                        <ion-input type="number" placeholder="Awesome Input" required name="tasaInteresEfectiva" [(ngModel)]="tasaInteresEfectiva" ></ion-input>
+                    </ion-item>
+                    <br>
+
+                    <ion-label style="font-family: AvenirLTStd-Black;" >Valor prestamo</ion-label>
+
+                    <ion-item>
+                        <ion-input type="number" placeholder="Awesome Input" required name="valorPrestamo" [(ngModel)]="valorPrestamo" ></ion-input>
+                    </ion-item>
+
+                    <br>
+                    <ion-label style="font-family: AvenirLTStd-Black;" >Valor Cuota Fija</ion-label>
+
+                    <ion-item>
+                        <ion-input type="number" placeholder="Awesome Input" required name="valorCuotaFija" [(ngModel)]="valorCuotaFija" ></ion-input>
+                    </ion-item>
+
+                    <br>
+                    <ion-label style="font-family: AvenirLTStd-Black;" >Saldo Capital</ion-label>
+
+                    <ion-item>
+                        <ion-input type="number" placeholder="Awesome Input" required name="saldoCapital" [(ngModel)]="saldoCapital" ></ion-input>
+                    </ion-item>
+
+                    <br>
+                    
+
+
+                    <ion-button (click)="onOperation()" expand="block" [disabled]="formulario2.invalid" >
+                        Click me
+                    </ion-button>
+
+                    <p style="font-family: AvenirLTStd-Black; font-weight: bold;">Tasa interes aplicada(%)</p>
+                    <ion-label style="font-family: AvenirLTStd-Black;" > 
+                        {{ resultadoTasaInteresAplicada}} <br>
+
+                    </ion-label>
+-----------------------------------------------------
+                    <p style="font-family: AvenirLTStd-Black; font-weight: bold;">Número de cuotas</p>
+                    <ion-label style="font-family: AvenirLTStd-Black;" type="number" > 
+                        {{ arrayGuardarResultadosNumerodeCuotas}} <br>
+
+                    </ion-label>
+
+
+                    -----------------------------------------------------
+                    <p style="font-family: AvenirLTStd-Black; font-weight: bold;">1era Banda</p>
+                    <ion-label style="font-family: AvenirLTStd-Black;" > 
+                        {{ arrayGuardarResultadosBandas}} <br>
+                    </ion-label>
+
+                    -----------------------------------------------------
+                    
+                </form>
+            </ion-col>
+            <ion-col size="2"></ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>
+
+
